@@ -16,13 +16,16 @@ from telethon import TelegramClient, events
 from aiohttp import web
 import aiohttp
 import qrcode
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ==================== НАСТРОЙКИ ====================
-API_ID = 38989287                          # Ваш API ID
-API_HASH = '04f55718c613f3cada36fd1690c1d16a'            # Ваш API Hash
-BOT_TOKEN = '8905900627:AAG9tJ22lvVL-RcTfDquicnbvFpVzh0dDi0'       # Токен бота
-DOMAIN = 'devopslymar.ru'                  # Ваш домен
-QUOTA_SIZE = '1G'                          # Размер персонального диска
+API_ID = int(os.getenv("API_ID"))                          # Ваш API ID
+API_HASH = os.getenv("API_HASH")            # Ваш API Hash
+BOT_TOKEN = os.getenv("BOT_TOKEN")       # Токен бота
+DOMAIN = os.getenv("DOMAIN")                  # Ваш домен
+QUOTA_SIZE = os.getenv("QUOTA_SIZE")                          # Размер персонального диска
 # ===================================================
 
 BASE_DIR = '/opt/tg-cloud'
